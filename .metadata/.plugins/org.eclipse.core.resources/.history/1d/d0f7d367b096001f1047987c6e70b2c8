@@ -1,0 +1,10 @@
+package sk.web.web.run;
+
+public class RunNotFoundException extends RunTimeException{
+
+	public RunNotFoundException() {
+		super("Run Not Found");
+	}
+	
+
+}

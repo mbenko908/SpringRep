@@ -1,0 +1,4 @@
+spring.application.name=web
+db.name=management
+db.username=postgres
+db.password=postgres

@@ -1,0 +1,12 @@
+package sk.web.web.run;
+
+import org.springframework.web.bin.annotation.RestController;
+
+@RestController
+public class RunController {
+	
+	@GetMapping("/hello"){
+		return "hello Runners!"
+	}
+
+}

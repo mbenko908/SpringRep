@@ -1,0 +1,120 @@
+package sk.web.web.run;
+
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.util.Objects;
+
+public class Run {
+	
+	private Integer id;
+	private String title;
+	private LocalDateTime startedOn;
+	private LocalDateTime completedOn;
+	private Integer miles;
+	private Location location;
+	
+	public Run(Integer id, String title, LocalDateTime startedOn, LocalDateTime completedOn, Integer miles,
+			Location location) {
+		this.id = id;
+		this.title = title;
+		this.startedOn = startedOn;
+		this.completedOn = completedOn;
+		this.miles = miles;
+		this.location = location;
+		if (!completedOn.isAfter(startedOn)) {
+			throw new IllegalArgumentException("Completed On must be after Started On");
+		}
+	}
+
+	public Duration getDuration() {
+		return Duration.between(startedOn, CompletedOn);
+	}
+	
+	public Integer getAvgPace() {
+		return Math.toIntExact(getDuration().toMinutes()/miles);
+	}
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public LocalDateTime getStartedOn() {
+		return startedOn;
+	}
+
+	public LocalDateTime getCompletedOn() {
+		return completedOn;
+	}
+
+	public Integer getMiles() {
+		return miles;
+	}
+	
+	public Duration setDuration() {
+		this.duration = Duration.between(startedOn, completedOn);
+	}
+	
+	public Integer setAvgPace() {
+		this.setAvgPace = Math.toIntExact(getDuration().toMinutes()/miles);
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+	public void setStartedOn(LocalDateTime startedOn) {
+		this.startedOn = startedOn;
+	}
+
+	public void setCompletedOn(LocalDateTime completedOn) {
+		this.completedOn = completedOn;
+	}
+
+	public void setMiles(Integer miles) {
+		this.miles = miles;
+	}
+
+	public void setLocation(Location location) {
+		this.location = location;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(completedOn, id, miles, startedOn, title);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Run other = (Run) obj;
+		return Objects.equals(completedOn, other.completedOn) && Objects.equals(id, other.id)
+				&& Objects.equals(miles, other.miles) && Objects.equals(startedOn, other.startedOn)
+				&& Objects.equals(title, other.title);
+	}
+
+	@Override
+	public String toString() {
+		return "Run [id=" + id + ", title=" + title + ", startedOn=" + startedOn + ", completedOn=" + completedOn
+				+ ", miles=" + miles + "]";
+	}
+
+	
+	
+}

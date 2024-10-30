@@ -1,0 +1,23 @@
+package sk.web.web.controller;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class HelloController {
+    @GetMapping("/hello")
+    public String hello(){
+        return "Hello, Spring boot!";
+    }
+ 
+    
+    @GetMapping("/")
+    public String index() {
+        return "index"; // Vráti "index.html" z templates
+    }
+    
+    @GetMapping("/about")
+    public String about() {
+        return "about"; // Vráti "about.html" z templates
+    }
+}

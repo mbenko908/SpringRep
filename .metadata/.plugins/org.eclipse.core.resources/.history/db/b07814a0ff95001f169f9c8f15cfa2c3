@@ -1,0 +1,23 @@
+package sk.web.web;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import sk.web.web.controller.*;
+
+@SpringBootApplication
+public class WebApplication {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext context = SpringApplication.run(WebApplication.class, args);
+		
+		Object welcomeMessage = context.getBean("welcomeMessage");
+		
+		System.out.println(welcomeMessage);
+		//var welcomeMessage = new WelcomeMessage();
+		//System.out.println(welcomeMessage.getWelcomeMessage());
+		
+	}
+
+}

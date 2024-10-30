@@ -1,0 +1,13 @@
+package sk.web.web.run;
+
+import org.springframework.web.bind.annotation.*; // Correct import statement for all annotations
+import org.springframework.web.bind.annotation.GetMapping;
+
+@RestController
+public class RunController {
+    
+   private final RunRepository runRepository;
+   
+   public 
+
+}
