@@ -20,14 +20,15 @@ public class WebApplication {
 		SpringApplication.run(WebApplication.class, args);
 
 	}
-
+/**
 	@Bean
-	CommandLineRunner runner() {
+	CommandLineRunner runner(RunRepository runRepository) {
 		return args -> {
 			Run run = new Run(1, "First Run", LocalDateTime.now(), LocalDateTime.now().plusHours(1), 5,
 					Location.OUTDOOR);
+			runRepository.create(run);
 			// Add logic to save the 'run' object to the database if needed
-			log.info("Run:" + run);
+			//log.info("Run:" + run);
 		};
-	}
+	}**/
 }

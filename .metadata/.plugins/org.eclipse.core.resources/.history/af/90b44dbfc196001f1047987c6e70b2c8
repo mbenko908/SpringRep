@@ -1,0 +1,9 @@
+spring.application.name=web
+spring.jpa.hibernate.ddl-auto=update
+server.address=0.0.0.0
+server.port=8081
+spring.h2.console.enabled=true
+spring.datasource.name=runner
+spring.datasource.username=SA
+spring.datasource.password=
+spring.jpa.hibernate.ddl-auto=create-drop

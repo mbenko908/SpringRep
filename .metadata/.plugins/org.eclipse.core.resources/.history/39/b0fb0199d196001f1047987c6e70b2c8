@@ -1,0 +1,5 @@
+package sk.web.web.run;
+
+public class RunJsonDataLoader {
+
+}
